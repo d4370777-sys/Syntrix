@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syntrix</title>
+
+<style>
+body{
+margin:0;
+background:#0a0f1f;
+font-family:Arial;
+color:white;
+}
+
+.screen{
+display:none;
+padding:20px;
+}
+
+.active{
+display:block;
+}
+
+.bottom-nav{
+position:fixed;
+bottom:0;
+width:100%;
+background:#111;
+display:flex;
+justify-content:space-around;
+padding:10px 0;
+}
+
+.nav-btn{
+color:white;
+font-size:14px;
+text-align:center;
+}
+
+.logo{
+text-align:center;
+font-size:28px;
+margin:20px 0;
+color:#00f0ff;
+}
+
+.post{
+background:#111a30;
+padding:15px;
+border-radius:12px;
+margin-bottom:15px;
+}
+
+video{
+width:100%;
+border-radius:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="logo">Syntrix</div>
+
+<div id="chat" class="screen active">
+<h3>Чаты</h3>
+<div class="post">💬 Добро пожаловать в Syntrix</div>
+<div class="post">💬 Это твой мессенджер 3 в 1</div>
+</div>
+
+<div id="feed" class="screen">
+<h3>Лента</h3>
+<div class="post">🔥 Первый пост в ленте</div>
+<div class="post">🚀 Syntrix развивается</div>
+</div>
+
+<div id="video" class="screen">
+<h3>Видео</h3>
+<video controls>
+<source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+</video>
+</div>
+
+<div id="ai" class="screen">
+<h3>AI Ассистент</h3>
+<div class="post">🤖 AI скоро будет подключен</div>
+</div>
+
+<div class="bottom-nav">
+<div class="nav-btn" onclick="show('chat')">💬</div>
+<div class="nav-btn" onclick="show('feed')">📰</div>
+<div class="nav-btn" onclick="show('video')">🎥</div>
+<div class="nav-btn" onclick="show('ai')">🤖</div>
+</div>
+
+<script>
+function show(id){
+document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
